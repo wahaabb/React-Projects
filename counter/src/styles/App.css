@@ -1,0 +1,197 @@
+body {
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+}
+/* Hide arrows in number input */
+.counter-input::-webkit-inner-spin-button,
+.counter-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.counter-input {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+h1,
+h2 {
+    color: white;
+}
+
+.counter-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    width: 350px;
+    background: linear-gradient (transparent);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.counter-input-section {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.counter-input {
+    width: 80%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.counter-input:focus {
+    outline: none;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.counter-display {
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.counter-number {
+    font-size: 64px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #6cc1ce, #5ac8e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 1.5s infinite;
+    
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.counter-buttons {
+    display: flex;
+    gap: 15px;
+    padding-top: 50px;
+}
+
+.counter-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.counter-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.counter-btn:hover:before {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.counter-btn.start {
+    background: linear-gradient(145deg, #00c6ff, #0072ff);
+}
+
+.counter-btn.stop {
+    background: linear-gradient(145deg, #ff416c, #ff4b2b);
+}
+
+.counter-btn.reset {
+    background: linear-gradient(145deg, #00c9ff, #92fe9d);
+}
+
+.counter-btn:hover {
+    transform: translateY(-3px);
+}
+
+.counter-btn:active {
+    transform: translateY(1px);
+}
+
+
+.glow {
+    position: absolute;
+    bottom: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    filter: blur(50px);
+}
+
+.times-up-message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff4b2b;
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    animation:  ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
